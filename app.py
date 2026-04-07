@@ -1,112 +1,125 @@
 import streamlit as st
 
 # Configuración de la página
-st.set_page_config(page_title="Ética Deportiva: Tóxicos vs. No Tóxicos", layout="wide")
+st.set_page_config(page_title="Liderazgo y Ética Deportiva", layout="wide")
 
-# Estilo personalizado (Fondo blanco y señalizaciones azules)
+# Estilo personalizado: Fondo blanco y señalizaciones azules
 st.markdown("""
     <style>
     .main {
         background-color: #FFFFFF;
     }
     h1, h2, h3 {
-        color: #0056b3;
+        color: #004A99; /* Azul fuerte */
+        font-family: 'Helvetica', sans-serif;
     }
     .stAlert {
-        border-left: 5px solid #0056b3;
+        border-left: 5px solid #004A99;
     }
-    .toxic-box {
-        padding: 20px;
-        border: 2px solid #ff4b4b;
-        border-radius: 10px;
-        background-color: #fff5f5;
+    .blue-line {
+        height: 4px;
+        background-color: #004A99;
+        margin-bottom: 20px;
+        border-radius: 2px;
     }
-    .pro-box {
+    .card-pro {
         padding: 20px;
-        border: 2px solid #0056b3;
-        border-radius: 10px;
-        background-color: #f0f7ff;
+        border: 2px solid #004A99;
+        border-radius: 15px;
+        background-color: #F0F8FF;
+    }
+    .card-toxic {
+        padding: 20px;
+        border: 2px solid #E63946;
+        border-radius: 15px;
+        background-color: #FFF5F5;
     }
     </style>
     """, unsafe_allow_html=True)
 
-# Título principal
-st.title("🏃‍♂️ Comportamiento en el Deporte: Fair Play vs. Toxicidad")
-st.write("Explorando la psicología y las acciones de los deportistas en todas las disciplinas.")
+# Título Principal
+st.title("🏆 Ética en el Deporte: Líderes vs. Disciplina")
+st.markdown('<div class="blue-line"></div>', unsafe_allow_html=True)
 
-# --- SECCIÓN: DEFINICIONES ---
-col1, col2 = st.columns(2)
+# --- SECCIÓN: DEFINICIONES GENERALES ---
+st.header("📌 Definiciones y Señalizaciones")
+col_def1, col_def2 = st.columns(2)
 
-with col1:
-    st.header("🚫 El Deportista Tóxico")
-    st.markdown("""
-    <div class="toxic-box">
-    <strong>Definición:</strong> Es aquel que prioriza su ego o el resultado por encima del respeto a los demás. 
-    Sus acciones contaminan el ambiente del equipo, degradan al rival y cuestionan la autoridad injustamente.
-    </div>
-    """, unsafe_allow_html=True)
+with col_def1:
+    st.subheader("🔵 ¿Qué es un Jugador con Buen Fairplay?")
+    st.write("""
+    Es aquel que cumple las reglas de forma íntegra, respeta al rival y mantiene una disciplina 
+    constante tanto dentro como fuera de la cancha. 
     
-    st.subheader("¿Qué hace un deportista tóxico?")
-    st.write("* **Culpa a otros:** Nunca acepta sus errores en el campo.")
-    st.write("* **Falta de respeto:** Insulta a rivales, árbitros o compañeros.")
-    st.write("* **Antideportivo:** Busca ganar haciendo trampa o lesionando.")
+    **Señales de un Líder:**
+    * **Puntualidad y Esfuerzo:** Es el primero en llegar y el último en irse.
+    * **Resiliencia:** No se rinde ante la adversidad.
+    * **Inspiración:** Motiva a sus compañeros a ser mejores.
+    """)
+
+with col_def2:
+    st.subheader("🔴 ¿Qué es la Falta de Fairplay (Toxicidad/Indisciplina)?")
+    st.write("""
+    Ocurre cuando el deportista, a pesar de su talento, rompe las normas de convivencia o 
+    profesionalismo, priorizando distracciones o placeres inmediatos sobre su carrera.
     
-with col2:
-    st.header("✅ El Deportista No Tóxico")
-    st.markdown("""
-    <div class="pro-box">
-    <strong>Definición:</strong> También llamado "Líder Positivo", es quien entiende que el deporte es competencia basada en el respeto. 
-    Eleva el nivel de su equipo y acepta la derrota con dignidad.
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.subheader("¿Qué hace un deportista no tóxico?")
-    st.write("* **Responsabilidad:** Asume sus fallos y trabaja para mejorar.")
-    st.write("* **Empatía:** Ayuda al rival a levantarse y apoya al compañero que falla.")
-    st.write("* **Respeto a las reglas:** Acepta las decisiones arbitrales sin violencia.")
+    **Señales de Advertencia:**
+    * **Indisciplina:** Faltar a entrenamientos o descuidar el físico.
+    * **Egoísmo:** Poner los deseos personales por encima del bienestar del equipo.
+    * **Ruptura de Reglas:** Involucrarse en problemas legales o conductas inapropiadas fuera del juego.
+    """)
 
 st.divider()
 
-# --- SECCIÓN: TIPOS DE JUGADORES ---
-st.header("🔍 Tipologías de Jugadores")
+# --- SECCIÓN: CASOS DE ESTUDIO (CRISTIANO VS RONALDINHO) ---
+st.header("⚽ Ejemplos de Vida en el Deporte")
 
-tab1, tab2 = st.tabs(["Tipos de Tóxicos", "Tipos de No Tóxicos"])
+col_cr7, col_r10 = st.columns(2)
+
+with col_cr7:
+    st.image("https://images.unsplash.com/photo-1599407630303-3f1917f892fe?q=80&w=500&auto=format&fit=crop", caption="Liderazgo y Disciplina")
+    st.markdown("""
+    <div class="card-pro">
+    <h3>Cristiano Ronaldo: El Líder Inalcanzable</h3>
+    <strong>¿Por qué es un ejemplo de Fairplay y Liderazgo?</strong><br>
+    Ronaldo representa la ética de trabajo pura. Su liderazgo se basa en el ejemplo:
+    <ul>
+        <li><strong>Demostraciones:</strong> Ha mantenido un nivel de élite por más de 20 años gracias a una dieta estricta, descanso y entrenamiento mental.</li>
+        <li><strong>Mentalidad:</strong> En momentos críticos, toma la responsabilidad del equipo y empuja a sus compañeros a no rendirse.</li>
+        <li><strong>Respeto al Deporte:</strong> Trata su cuerpo como un templo y el campo de juego como un lugar sagrado.</li>
+    </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col_r10:
+    st.image("https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=500&auto=format&fit=crop", caption="Talento vs. Tentación")
+    st.markdown("""
+    <div class="card-toxic">
+    <h3>Ronaldinho: El Talento que la Noche Apagó</h3>
+    <strong>¿Por qué es un ejemplo de falta de disciplina profesional?</strong><br>
+    Aunque es uno de los jugadores más queridos de la historia por su magia, su carrera es un recordatorio de los riesgos:
+    <ul>
+        <li><strong>Actitudes fuera de la cancha:</strong> Su preferencia por las fiestas y la vida nocturna afectó su rendimiento físico a una edad temprana.</li>
+        <li><strong>Ruptura de reglas:</strong> Tuvo problemas graves de disciplina en sus clubes y situaciones legales fuera del fútbol (como su detención en Paraguay).</li>
+        <li><strong>Consecuencia:</strong> A pesar de ser respetado por su juego, muchos consideran que "arruinó" su potencial de ser el mejor de todos los tiempos por ceder ante las tentaciones.</li>
+    </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.divider()
+
+# --- SECCIÓN: DIFERENTES TIPOS EN OTROS DEPORTES ---
+st.header("🏃‍♂️ Tipos de Jugadores en el Mundo")
+
+tab1, tab2 = st.tabs(["Líderes Positivos", "Figuras Polémicas"])
 
 with tab1:
-    c1, c2, c3 = st.columns(3)
-    with c1:
-        st.image("https://img.freepik.com/vector-gratis/ilustracion-concepto-enojo_114360-3725.jpg", caption="El 'Temperamental'")
-        st.write("**El Temperamental:** Pierde el control fácilmente, grita y puede llegar a la agresión física.")
-    with c2:
-        st.image("https://img.freepik.com/vector-gratis/ilustracion-concepto-mentira_114360-5231.jpg", caption="El 'Tramposo'")
-        st.write("**El Tramposo:** Simula faltas, usa sustancias prohibidas o manipula el equipo para ganar ventaja.")
-    with c3:
-        st.image("https://img.freepik.com/vector-gratis/personaje-dibujos-animados-hombre-orgulloso_23-2148151525.jpg", caption="El 'Egocéntrico'")
-        st.write("**El Egocéntrico:** Cree que es mejor que el equipo. No pasa el balón y desprecia el esfuerzo ajeno.")
+    st.write("**El Estratega Calmo (Tenis):** Jugadores como Rafael Nadal, que nunca rompen una raqueta y respetan cada punto del rival.")
+    st.write("**El Mentor (Baloncesto):** Veteranos que enseñan a los novatos a manejar la fama y el dinero con humildad.")
 
 with tab2:
-    c4, c5, c6 = st.columns(3)
-    with c4:
-        st.image("https://img.freepik.com/vector-gratis/ilustracion-concepto-colaboracion_114360-3914.jpg", caption="El 'Mentor'")
-        st.write("**El Mentor:** Enseña a los más jóvenes y mantiene la calma en momentos de alta presión.")
-    with c5:
-        st.image("https://img.freepik.com/vector-gratis/ilustracion-concepto-honor_114360-6421.jpg", caption="El 'Caballero'")
-        st.write("**El Caballero:** Admite si cometió una falta aunque el árbitro no la haya visto.")
-    with c6:
-        st.image("https://img.freepik.com/vector-gratis/ilustracion-concepto-resiliencia_114360-7067.jpg", caption="El 'Resiliente'")
-        st.write("**El Resiliente:** Acepta la derrota, saluda al rival y se enfoca en el próximo entrenamiento.")
+    st.write("**El Temperamental:** Deportistas que insultan a los jueces o se pelean con la grada.")
+    st.write("**El Talentoso Indisciplinado:** Aquellos que faltan a las prácticas porque confían solo en su talento natural.")
 
-# --- SECCIÓN: EJEMPLOS REALES ---
-st.divider()
-st.header("🏆 Ejemplos en el Deporte Real")
-
-with st.expander("Ejemplos de Conductas Tóxicas"):
-    st.write("- **Fútbol:** Insultos racistas hacia rivales o escupitajos.")
-    st.write("- **Tenis:** Romper raquetas y discutir agresivamente con el juez de silla.")
-    st.write("- **Ciclismo:** Casos históricos de dopaje sistemático para engañar al sistema.")
-
-with st.expander("Ejemplos de Conductas Ejemplares"):
-    st.write("- **Atletismo:** Detenerse para ayudar a un corredor lesionado a cruzar la meta.")
-    st.write("- **Rugby:** El respeto absoluto al árbitro (solo el capitán habla con él).")
-    st.write("- **Baloncesto:** Reconocer el talento del rival tras una final perdida.")
-
+# Pie de página
+st.markdown('<br><hr><center>Página creada para el análisis del comportamiento deportivo - 2026</center>', unsafe_allow_html=True)
